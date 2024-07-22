@@ -5,6 +5,7 @@ import csv
 import math
 from typing import List
 
+
 def index_range(page, page_size):
     """
     Write a function named index_range that takes two
@@ -14,6 +15,7 @@ def index_range(page, page_size):
     end_index = page * page_size
 
     return (start_index, end_index)
+
 
 class Server:
     """Server class to paginate a database of popular baby names.
@@ -36,10 +38,10 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
-        Implement a method named get_page that takes two integer arguments 
+        Implement a method named get_page that takes two integer arguments
         page with default value 1 and page_size with default value 10."""
-            assert isinstance(page, int) and page > 0
-            assert isinstance(page_size, int) and page_size > 0
-            start_index, end_index = index_range(page, page_size)
-            dataset = self.dataset()
-            return dataset[start_index:end_index]
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
+        start_index, end_index = index_range(page, page_size)
+        dataset = self.dataset()
+        return dataset[start_index:end_index]
